@@ -31,7 +31,7 @@ public class VentaService implements IVentaService {
     @Override
     public Venta getVentaById(Long id) {
         return ventaRepository.findById(id).orElseThrow(() ->
-                new RuntimeException("La venta con ID " + id + "no existe."));
+                new RuntimeException("La venta con ID: " + id + " no existe."));
     }
 
     @Override
@@ -44,14 +44,9 @@ public class VentaService implements IVentaService {
         this.crearVenta(venta);
     }
 
-    @Override
-    public List<Producto> listaDeProd(Long id) {
-       Venta vent = ventaRepository.findById(id).orElse(null);
-       return vent.getLista_productos();
-    }
 
     @Override
-    public String ventasFecha(LocalDate fecha) {
+    public String getVentasFecha(LocalDate fecha) {
         List<Venta> listaVentas = ventaRepository.findAll();
 
         List<Venta> listaFecha = listaVentas.stream()

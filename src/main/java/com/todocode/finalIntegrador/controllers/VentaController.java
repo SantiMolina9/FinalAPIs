@@ -50,7 +50,7 @@ public class VentaController {
 
     @GetMapping("ventas/fecha/{fecha}")
     public String getVentasPorFecha(@PathVariable LocalDate fecha){
-        return ventaService.ventasFecha(fecha);
+        return ventaService.getVentasFecha(fecha);
     }
 
     @GetMapping("ventas/mayor_venta")

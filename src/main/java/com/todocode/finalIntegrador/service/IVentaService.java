@@ -13,8 +13,7 @@ public interface IVentaService {
     public Venta getVentaById(Long id);
     public void deleteById(Long id);
     public void editVenta(Venta venta);
-    public List<Producto> listaDeProd(Long id);
-    public String ventasFecha(LocalDate fecha);
+    public String getVentasFecha(LocalDate fecha);
     public VentaDTO mayorVenta();
     public List<Producto> getListaDeProductos(Long codigo_venta);
 }
